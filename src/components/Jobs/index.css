@@ -1,0 +1,253 @@
+.jobs-section-sm-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #000000;
+  padding: 20px;
+  font-family: 'Roboto';
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .jobs-section-sm-container {
+    display: none;
+  }
+}
+
+.jobs-section-md-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #000000;
+  padding: 20px;
+  font-family: 'Roboto';
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 767px) {
+  .jobs-section-md-container {
+    display: none;
+  }
+}
+
+.profile-filter-md-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  flex-shrink: 0;
+  align-items: center;
+  margin-right: 32px;
+  padding-left: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .profile-filter-md-container {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .profile-filter-md-container {
+    width: 25%;
+  }
+}
+
+.search-jobs-md-container {
+  display: flex;
+  flex-direction: column;
+  width: 58%;
+  flex-grow: 1;
+  align-items: center;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .search-jobs-md-container {
+    margin-top: 20px;
+  }
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  color: #ffffff;
+  border: 1px solid #64748b;
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .search-container {
+    max-width: 60%;
+    align-self: flex-start;
+  }
+}
+
+.search-input {
+  background-color: transparent;
+  flex-grow: 1;
+  border: 0px;
+  padding: 8px;
+  margin-left: 4px;
+  color: #ffffff;
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .search-input {
+    padding: 12px;
+  }
+}
+
+.search-btn {
+  background-color: #272727;
+  width: 60px;
+  border: 0px;
+}
+
+.search-icon {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.profile-sm-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 200px;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.profile-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+}
+
+.name {
+  color: #6366f1;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .name {
+    font-size: 24px;
+  }
+}
+
+.short-bio {
+  margin: 12px 0px;
+  color: #2c364c;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .short-bio {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+.loader-container {
+  align-self: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+.profile-failure-view-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+.profile-retry-btn {
+  height: 50px;
+  width: 150px;
+  color: #ffffff;
+  border: 0px;
+  border-radius: 4px;
+  background-color: #4f46e5;
+  cursor: pointer;
+  outline: none;
+}
+
+.filter-container {
+  color: #ffffff;
+  border-top: 2px solid #b6c5ff;
+  width: 100%;
+  padding: 12px 0px;
+}
+
+.filter-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 16px 0px;
+}
+
+.input-checkbox {
+  margin-right: 12px;
+}
+
+.filter-label {
+  font-size: 14px;
+}
+
+.jobs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.failure-view-image {
+  width: 90%;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-view-image {
+    height: 300px;
+    width: 420px;
+  }
+}
+
+.failure-title {
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-title {
+    font-size: 36px;
+  }
+}
+
+.failure-msg {
+  color: #cbd5e1;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.8;
+  width: 90%;
+}
