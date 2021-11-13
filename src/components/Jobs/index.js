@@ -3,6 +3,7 @@ import {BsSearch} from 'react-icons/bs'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 
+import FiltersGroup from '../FiltersGroup'
 import Header from '../Header'
 import JobCard from '../JobCard'
 import './index.css'
@@ -91,7 +92,7 @@ class Jobs extends Component {
         profileApiStatus: apiStatusConstants.success,
         profile: updatedProfileDetails,
       })
-    } else if (response.status === 401) {
+    } else {
       this.setState({profileApiStatus: apiStatusConstants.failure})
     }
   }
@@ -129,7 +130,7 @@ class Jobs extends Component {
         jobsApiStatus: apiStatusConstants.success,
         jobs: updatedJobsData,
       })
-    } else if (response.status === 401) {
+    } else {
       this.setState({jobsApiStatus: apiStatusConstants.failure})
     }
   }
@@ -139,12 +140,12 @@ class Jobs extends Component {
   }
 
   onChangeSearchInput = event => {
-    this.setState({searchText: event.target.value}, this.getJobs)
+    this.setState({searchText: event.target.value})
   }
 
   onChangeEmploymentType = event => {
     const {activeEmploymentType} = this.state
-    const changedElId = event.target.id
+    const changedElId = event
     const isActive = activeEmploymentType.includes(changedElId)
     if (isActive === true) {
       const updatedEmploymentType = activeEmploymentType.filter(
@@ -163,7 +164,7 @@ class Jobs extends Component {
   }
 
   onChangeSalaryRange = event => {
-    this.setState({salaryRange: event.target.id}, this.getJobs)
+    this.setState({salaryRange: event}, this.getJobs)
   }
 
   onProfileRetry = () => {
@@ -203,7 +204,7 @@ class Jobs extends Component {
     return (
       <div className="profile-sm-container">
         <img src={profileImageUrl} alt="profile" className="profile-image" />
-        <p className="name">{name}</p>
+        <h1 className="name">{name}</h1>
         <p className="short-bio">{shortBio}</p>
       </div>
     )
@@ -258,7 +259,13 @@ class Jobs extends Component {
   renderJobsSuccessView = () => {
     const {jobs} = this.state
     if (jobs.length !== 0) {
-      return jobs.map(eachJob => <JobCard key={eachJob.id} jobItem={eachJob} />)
+      return (
+        <ul className="jobs-container">
+          {jobs.map(eachJob => (
+            <JobCard key={eachJob.id} jobItem={eachJob} />
+          ))}
+        </ul>
+      )
     }
     return this.renderNoJobsView()
   }
@@ -299,66 +306,89 @@ class Jobs extends Component {
   }
 
   renderTypeofEmploymentFilter = () => (
-    <div className="filter-container">
+    <ul className="filter-container">
       <p>Type of Employment</p>
-      {employmentTypesList.map(eachType => {
-        const {employmentTypeId, label} = eachType
-        return (
-          <div className="filter-item-container">
-            <input
-              type="checkbox"
-              id={employmentTypeId}
-              className="input-checkbox"
-              onChange={this.onChangeEmploymentType}
-            />
-            <label className="filter-label">{label}</label>
-          </div>
-        )
-      })}
-    </div>
+      {employmentTypesList.map(eachType => (
+        <li key={eachType.employmentTypeId} className="filter-item-container">
+          <input
+            type="checkbox"
+            id={eachType.employmentTypeId}
+            className="input-checkbox"
+            onChange={this.onChangeEmploymentType}
+          />
+          <label className="filter-label">{eachType.label}</label>
+        </li>
+      ))}
+    </ul>
   )
 
   renderSalaryRangeFilter = () => (
-    <div className="filter-container">
-      <p>Salary Range</p>
-      {salaryRangesList.map(eachRange => {
-        const {salaryRangeId, label} = eachRange
-        return (
-          <div className="filter-item-container">
-            <input
-              type="radio"
-              id={salaryRangeId}
-              className="input-checkbox"
-              name="salaryRange"
-              onChange={this.onChangeSalaryRange}
-            />
-            <label className="filter-label">{label}</label>
-          </div>
-        )
-      })}
-    </div>
+    <ul className="filter-container">
+      <h1 className="filter-title">Salary Range</h1>
+      {salaryRangesList.map(eachRange => (
+        <li key={eachRange.salaryRangeId} className="filter-item-container">
+          <input
+            type="radio"
+            id={eachRange.salaryRangeId}
+            className="input-checkbox"
+            name="salaryRange"
+            onChange={this.onChangeSalaryRange}
+          />
+          <label className="filter-label">{eachRange.label}</label>
+        </li>
+      ))}
+    </ul>
   )
 
   render() {
+    const {searchText} = this.state
     return (
       <>
         <Header />
         <div className="jobs-section-sm-container">
-          {this.renderSearchBox()}
+          <div className="search-container">
+            <input
+              type="search"
+              value={searchText}
+              className="search-input"
+              placeholder="Search"
+              onChange={this.onChangeSearchInput}
+            />
+            <button
+              type="button"
+              className="search-btn"
+              testid="searchButton"
+              onClick={this.onSubmitSearchText}
+            >
+              <BsSearch className="search-icon" />
+            </button>
+          </div>
           {this.renderProfileContainer()}
-          {this.renderTypeofEmploymentFilter()}
-          {this.renderSalaryRangeFilter()}
-          <ul className="jobs-container">{this.renderJobsContainer()}</ul>
+          <FiltersGroup
+            employmentTypesList={employmentTypesList}
+            salaryRangesList={salaryRangesList}
+            onChangeEmploymentType={this.onChangeEmploymentType}
+            onChangeSalaryRange={this.onChangeSalaryRange}
+          />
+          <div className="jobs-display-container">
+            {this.renderJobsContainer()}
+          </div>
         </div>
         <div className="jobs-section-md-container">
           <div className="profile-filter-md-container">
             {this.renderProfileContainer()}
-            {this.renderTypeofEmploymentFilter()}
-            {this.renderSalaryRangeFilter()}
+            <FiltersGroup
+              employmentTypesList={employmentTypesList}
+              salaryRangesList={salaryRangesList}
+              onChangeEmploymentType={this.onChangeEmploymentType}
+              onChangeSalaryRange={this.onChangeSalaryRange}
+            />
           </div>
           <div className="search-jobs-md-container">
             {this.renderSearchBox()}
-            <ul className="jobs-container">{this.renderJobsContainer()}</ul>
+            <div className="jobs-display-container">
+              {this.renderJobsContainer()}
+            </div>
           </div>
         </div>
       </>

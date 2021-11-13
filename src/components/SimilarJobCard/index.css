@@ -1,0 +1,135 @@
+.similar-job-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: #272727;
+  border-radius: 16px;
+  padding: 24px 16px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .similar-job-card {
+    max-width: 300px;
+    padding: 32px 28px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.similar-job-card-top-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  color: #ffffff;
+}
+
+.similar-job-card-title-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.similar-job-company-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.similar-job-title-rating-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50px;
+  margin-left: 12px;
+  padding-top: 2px;
+}
+
+.similar-job-title {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.similar-job-rating-container {
+  display: flex;
+  flex-direction: row;
+  height: 25px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.similar-job-star-image {
+  color: #fbbf24;
+  margin-right: 8px;
+}
+
+.similar-job-card-middle-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  color: #ffffff;
+  font-family: 'Roboto';
+}
+
+.similar-job-description-heading {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 9px;
+}
+
+@media screen and (min-width: 768px) {
+  .similar-job-description-heading {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.similar-job-description-content {
+  font-size: 15px;
+  margin-bottom: 9px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+  .similar-job-description-content {
+    line-height: 1.8;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+.similar-job-card-bottom-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.job-detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.similar-job-details-logo {
+  margin-right: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .similar-job-details-logo {
+    font-size: 22px;
+  }
+}
+.details-info {
+  font-size: 14px;
+  font-weight: 300;
+}

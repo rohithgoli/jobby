@@ -1,3 +1,7 @@
+.item-link {
+  text-decoration: none;
+}
+
 .job-item-card {
   display: flex;
   flex-direction: column;
@@ -41,6 +45,7 @@
 .job-title {
   margin: 0px;
   font-weight: bold;
+  font-size: 18px;
 }
 
 .rating-container {
@@ -90,6 +95,7 @@
 .job-description-title {
   margin-bottom: 8px;
   margin-top: 0px;
+  font-size: 20px;
 }
 
 .job-description {

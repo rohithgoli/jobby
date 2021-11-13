@@ -1,0 +1,54 @@
+.job-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Roboto';
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #000000;
+  width: 100%;
+}
+
+.failure-view-image {
+  width: 90%;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-view-image {
+    height: 300px;
+    width: 420px;
+  }
+}
+
+.failure-title {
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-title {
+    font-size: 36px;
+  }
+}
+
+.failure-msg {
+  color: #cbd5e1;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.8;
+  width: 90%;
+}
+
+.retry-btn {
+  height: 50px;
+  width: 150px;
+  color: #ffffff;
+  border: 0px;
+  border-radius: 4px;
+  background-color: #4f46e5;
+  cursor: pointer;
+  outline: none;
+}

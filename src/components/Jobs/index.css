@@ -193,6 +193,13 @@
   border-top: 2px solid #b6c5ff;
   width: 100%;
   padding: 12px 0px;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.filter-title {
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .filter-item-container {
@@ -208,6 +215,14 @@
 
 .filter-label {
   font-size: 14px;
+}
+
+.jobs-display-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 .jobs-container {

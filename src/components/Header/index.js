@@ -24,14 +24,18 @@ const Header = props => {
           />
         </Link>
         <ul className="nav-menu-container">
-          <Link to="/">
-            <li>
-              <AiFillHome className="nav-link" />
-            </li>
-          </Link>
           <li>
-            <BsBriefcaseFill className="nav-link" />
+            <Link to="/">
+              <AiFillHome className="nav-link" />
+            </Link>
           </li>
+
+          <li>
+            <Link to="/jobs">
+              <BsBriefcaseFill className="nav-link" />
+            </Link>
+          </li>
+
           <li onClick={onLogout}>
             <FiLogOut className="nav-link" />
           </li>
@@ -46,12 +50,17 @@ const Header = props => {
           />
         </Link>
         <ul className="nav-menu-container">
-          <Link to="/">
-            <li className="nav-link-md">Home</li>
-          </Link>
-          <Link to="/jobs">
-            <li className="nav-link-md">Jobs</li>
-          </Link>
+          <li className="nav-link-md">
+            <Link to="/" className="item-link">
+              Home
+            </Link>
+          </li>
+
+          <li className="nav-link-md">
+            <Link to="/jobs" className="item-link">
+              Jobs
+            </Link>
+          </li>
         </ul>
         <button type="button" className="logout-btn-md" onClick={onLogout}>
           Logout

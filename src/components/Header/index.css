@@ -2,6 +2,7 @@
   background-color: #272727;
   font-family: 'Roboto';
   padding: 16px;
+  width: 100%;
 }
 
 .nav-content-sm-container {
@@ -19,7 +20,8 @@
 }
 
 .website-logo {
-  width: 30%;
+  width: 100px;
+  height: 30px;
   cursor: pointer;
 }
 
@@ -46,6 +48,11 @@
   }
 }
 
+.item-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .nav-link {
   height: 32px;
   width: 32px;
@@ -68,7 +75,6 @@
 }
 
 .nav-link-md {
-  color: #ffffff;
   text-decoration: none;
   outline: none;
 }
@@ -80,4 +86,5 @@
   border-radius: 4px;
   width: 100px;
   padding: 8px;
+  cursor: pointer;
 }

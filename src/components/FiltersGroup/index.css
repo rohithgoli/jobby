@@ -1,0 +1,36 @@
+.filter-container {
+  color: #ffffff;
+  border-top: 2px solid #b6c5ff;
+  width: 100%;
+  padding: 12px 0px;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.filter-items-container {
+  width: 100%;
+  color: #ffffff;
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.filter-title {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.filter-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 16px 0px;
+}
+
+.input-checkbox {
+  margin-right: 12px;
+}
+
+.filter-label {
+  font-size: 14px;
+}
