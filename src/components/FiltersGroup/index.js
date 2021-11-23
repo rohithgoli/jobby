@@ -16,7 +16,9 @@ const FiltersGroup = props => {
             className="input-checkbox"
             onChange={onSelectEmploymentType}
           />
-          <label className="filter-label">{label}</label>
+          <label className="filter-label" htmlFor={employmentTypeId}>
+            {label}
+          </label>
         </li>
       )
     })
@@ -24,7 +26,7 @@ const FiltersGroup = props => {
 
   const renderEmploymentTypes = () => (
     <div className="filter-container">
-      <p>Type of Employment</p>
+      <h1 className="filter-name">Type of Employment</h1>
       <ul className="filter-items-container">{renderEmploymentTypesList()}</ul>
     </div>
   )
@@ -45,7 +47,9 @@ const FiltersGroup = props => {
             name="salaryRange"
             onChange={onSelectSalaryRange}
           />
-          <label className="filter-label">{label}</label>
+          <label className="filter-label" htmlFor={salaryRangeId}>
+            {label}
+          </label>
         </li>
       )
     })
@@ -53,7 +57,7 @@ const FiltersGroup = props => {
 
   const renderSalaryRanges = () => (
     <div className="filter-container">
-      <p>Salary Range</p>
+      <h1 className="filter-name">Salary Range</h1>
       <ul className="filter-items-container">{renderSalaryRangesList()}</ul>
     </div>
   )

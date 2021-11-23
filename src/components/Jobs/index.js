@@ -77,7 +77,6 @@ class Jobs extends Component {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
       },
-      method: 'GET',
     }
     const response = await fetch(profileUrl, options)
     if (response.ok === true) {
@@ -110,7 +109,6 @@ class Jobs extends Component {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
       },
-      method: 'GET',
     }
     const response = await fetch(jobsUrl, options)
     if (response.ok === true) {
@@ -341,41 +339,12 @@ class Jobs extends Component {
   )
 
   render() {
-    const {searchText} = this.state
     return (
       <>
         <Header />
-        <div className="jobs-section-sm-container">
-          <div className="search-container">
-            <input
-              type="search"
-              value={searchText}
-              className="search-input"
-              placeholder="Search"
-              onChange={this.onChangeSearchInput}
-            />
-            <button
-              type="button"
-              className="search-btn"
-              testid="searchButton"
-              onClick={this.onSubmitSearchText}
-            >
-              <BsSearch className="search-icon" />
-            </button>
-          </div>
-          {this.renderProfileContainer()}
-          <FiltersGroup
-            employmentTypesList={employmentTypesList}
-            salaryRangesList={salaryRangesList}
-            onChangeEmploymentType={this.onChangeEmploymentType}
-            onChangeSalaryRange={this.onChangeSalaryRange}
-          />
-          <div className="jobs-display-container">
-            {this.renderJobsContainer()}
-          </div>
-        </div>
-        <div className="jobs-section-md-container">
-          <div className="profile-filter-md-container">
+
+        <div className="jobs-section-container">
+          <div className="profile-filter-container">
             {this.renderProfileContainer()}
             <FiltersGroup
               employmentTypesList={employmentTypesList}
@@ -384,11 +353,14 @@ class Jobs extends Component {
               onChangeSalaryRange={this.onChangeSalaryRange}
             />
           </div>
-          <div className="search-jobs-md-container">
+          <div className="search-jobs-container">
             {this.renderSearchBox()}
-            <div className="jobs-display-container">
+            <div className="jobs-display-md-container">
               {this.renderJobsContainer()}
             </div>
+          </div>
+          <div className="jobs-display-container">
+            {this.renderJobsContainer()}
           </div>
         </div>
       </>

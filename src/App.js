@@ -13,8 +13,8 @@ const App = () => (
     <ProtectedRoute exact path="/" component={Home} />
     <ProtectedRoute exact path="/jobs" component={Jobs} />
     <ProtectedRoute exact path="/jobs/:id" component={JobItemDetails} />
-    <Route exact path="/not-found" component={NotFoundRoute} />
-    <Redirect to="/not-found" />
+    <Route exact path="/bad-path" component={NotFoundRoute} />
+    <Redirect to="/bad-path" />
   </Switch>
 )
 export default App

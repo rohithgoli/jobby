@@ -1,4 +1,4 @@
-.jobs-section-sm-container {
+.jobs-section-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,28 +10,14 @@
 }
 
 @media screen and (min-width: 768px) {
-  .jobs-section-sm-container {
-    display: none;
+  .jobs-section-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
   }
 }
 
-.jobs-section-md-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  background-color: #000000;
-  padding: 20px;
-  font-family: 'Roboto';
-  min-height: 100vh;
-}
-
-@media screen and (max-width: 767px) {
-  .jobs-section-md-container {
-    display: none;
-  }
-}
-
-.profile-filter-md-container {
+.profile-filter-container {
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -41,19 +27,25 @@
   padding-left: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .profile-filter-container {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) {
-  .profile-filter-md-container {
+  .profile-filter-container {
     width: 40%;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .profile-filter-md-container {
+  .profile-filter-container {
     width: 25%;
   }
 }
 
-.search-jobs-md-container {
+.search-jobs-container {
   display: flex;
   flex-direction: column;
   width: 58%;
@@ -62,8 +54,15 @@
   padding-right: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .search-jobs-container {
+    width: 100%;
+    order: -1;
+  }
+}
+
 @media screen and (min-width: 768px) {
-  .search-jobs-md-container {
+  .search-jobs-container {
     margin-top: 20px;
   }
 }
@@ -223,6 +222,26 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .jobs-display-container {
+    display: none;
+  }
+}
+
+.jobs-display-md-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .jobs-display-md-container {
+    display: none;
+  }
 }
 
 .jobs-container {

@@ -92,7 +92,7 @@ const JobItemDetailsCard = props => {
           {renderSkills()}
           <h1 className="section-title">Life at Company</h1>
           <div className="life-at-company-section-container">
-            <p className="description">{description}</p>
+            <p className="life-at-company-description">{description}</p>
             <img
               src={imageUrl}
               alt="life at company"
