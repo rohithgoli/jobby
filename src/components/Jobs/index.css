@@ -27,7 +27,7 @@
   padding-left: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .profile-filter-container {
     width: 100%;
   }
@@ -54,7 +54,7 @@
   padding-right: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .search-jobs-container {
     width: 100%;
     order: -1;
@@ -238,7 +238,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .jobs-display-md-container {
     display: none;
   }

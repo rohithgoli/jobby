@@ -303,41 +303,6 @@ class Jobs extends Component {
     }
   }
 
-  renderTypeofEmploymentFilter = () => (
-    <ul className="filter-container">
-      <p>Type of Employment</p>
-      {employmentTypesList.map(eachType => (
-        <li key={eachType.employmentTypeId} className="filter-item-container">
-          <input
-            type="checkbox"
-            id={eachType.employmentTypeId}
-            className="input-checkbox"
-            onChange={this.onChangeEmploymentType}
-          />
-          <label className="filter-label">{eachType.label}</label>
-        </li>
-      ))}
-    </ul>
-  )
-
-  renderSalaryRangeFilter = () => (
-    <ul className="filter-container">
-      <h1 className="filter-title">Salary Range</h1>
-      {salaryRangesList.map(eachRange => (
-        <li key={eachRange.salaryRangeId} className="filter-item-container">
-          <input
-            type="radio"
-            id={eachRange.salaryRangeId}
-            className="input-checkbox"
-            name="salaryRange"
-            onChange={this.onChangeSalaryRange}
-          />
-          <label className="filter-label">{eachRange.label}</label>
-        </li>
-      ))}
-    </ul>
-  )
-
   render() {
     return (
       <>

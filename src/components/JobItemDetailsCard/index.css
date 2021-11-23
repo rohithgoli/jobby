@@ -170,7 +170,6 @@
 .skills-container {
   display: flex;
   flex-direction: row;
-  /*justify-content: space-between;*/
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
@@ -204,6 +203,7 @@
 @media screen and (min-width: 768px) {
   .life-at-company-image {
     width: 35%;
+    align-self: stretch;
   }
 }
 
