@@ -247,7 +247,7 @@ class Jobs extends Component {
         alt="no jobs"
         className="failure-view-image"
       />
-      <p className="failure-title">No Jobs Found</p>
+      <h1 className="failure-title">No Jobs Found</h1>
       <p className="failure-msg">
         We could not find any jobs. Try other filters.
       </p>
@@ -275,7 +275,7 @@ class Jobs extends Component {
         alt="failure view"
         className="failure-view-image"
       />
-      <p className="failure-title">Oops! Something Went Wrong</p>
+      <h1 className="failure-title">Oops! Something Went Wrong</h1>
       <p className="failure-msg">
         We cannot seem to find the page you are looking for.
       </p>
@@ -307,9 +307,11 @@ class Jobs extends Component {
     return (
       <>
         <Header />
-
         <div className="jobs-section-container">
           <div className="profile-filter-container">
+            <div className="search-filter-container">
+              {this.renderSearchBox()}
+            </div>
             {this.renderProfileContainer()}
             <FiltersGroup
               employmentTypesList={employmentTypesList}
@@ -318,13 +320,11 @@ class Jobs extends Component {
               onChangeSalaryRange={this.onChangeSalaryRange}
             />
           </div>
-          <div className="search-jobs-container">
-            {this.renderSearchBox()}
-            <div className="jobs-display-md-container">
-              {this.renderJobsContainer()}
-            </div>
-          </div>
+
           <div className="jobs-display-container">
+            <div className="search-jobs-container">
+              {this.renderSearchBox()}
+            </div>
             {this.renderJobsContainer()}
           </div>
         </div>

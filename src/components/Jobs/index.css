@@ -45,19 +45,29 @@
   }
 }
 
+.search-filter-container {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .search-filter-container {
+    display: none;
+  }
+}
+
 .search-jobs-container {
   display: flex;
   flex-direction: column;
-  width: 58%;
+  justify-content: center;
+  align-self: flex-start;
+  width: 100%;
   flex-grow: 1;
-  align-items: center;
   padding-right: 20px;
 }
 
 @media screen and (max-width: 767px) {
   .search-jobs-container {
-    width: 100%;
-    order: -1;
+    display: none;
   }
 }
 
@@ -222,26 +232,6 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  .jobs-display-container {
-    display: none;
-  }
-}
-
-.jobs-display-md-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-}
-
-@media screen and (max-width: 767px) {
-  .jobs-display-md-container {
-    display: none;
-  }
 }
 
 .jobs-container {

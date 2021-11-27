@@ -318,6 +318,7 @@ The app must have the following functionalities
 - The life at company image in Job Item Details Route should have the alt text as **life at company**
 - The skill images in the Job Item Details Route should have the alt text as the value of the key `name` from each object in the **skills** list in jobDetailsResponse
 - The company logo image in similar Job Item in Job Item Details Route should have the alt text as **similar job company logo**
+- Refer URL for Common HTML Elements used for typography [https://www.w3.org/wiki/Common_HTML_entities_used_for_typography](https://www.w3.org/wiki/Common_HTML_entities_used_for_typography)
 </details>
 
 ### Resources
